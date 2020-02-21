@@ -1,1 +1,1 @@
-from sconx.apps import App
+from sconx.apps import App, CompressionApp, TextCompressionApp
