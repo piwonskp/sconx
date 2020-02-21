@@ -1,0 +1,33 @@
+openapi: "3.0.2"
+info:
+  version: "0.0.1"
+  title: Swagger REST Article
+servers:
+  - url: "/"
+components:
+  schemas:
+    TestSchema:
+      type: object
+      properties:
+        a:
+          type: integer
+        b:
+          type: string
+        c:
+          type: integer
+paths:
+  /test-route:
+    post:
+      operationId: "tests.integration.api.test_route"
+      requestBody:
+        content:
+          application/jsan:
+            schema:
+              $ref: "#/components/schemas/TestSchema"
+      responses:
+        200:
+          description: Test response
+          content:
+            application/jsan:
+              schema:
+                $ref: "#/components/schemas/TestSchema"
